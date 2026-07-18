@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vigneshwara Fruits - Premium Pithapuram Bananas</title>
+    <style>
+        :root {
+            --primary-yellow: #FFDE47;
+            --dark-yellow: #E0A900;
+            --leaf-green: #3A5A40;
+            --light-bg: #FAF9F6;
+            --dark-text: #2C3E50;
+            --white: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--dark-text);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--leaf-green);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--dark-yellow);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--leaf-green);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #FFF9E6 0%, #FFF2CC 100%);
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            color: var(--leaf-green);
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #555;
+        }
+
+        /* Bulk Delivery Banner Notice */
+        .delivery-banner {
+            background-color: var(--leaf-green);
+            color: var(--white);
+            padding: 12px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+        }
+        .delivery-banner span {
+            color: var(--primary-yellow);
+        }
+
+        .btn {
+            background-color: var(--leaf-green);
+            color: var(--white);
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: transform 0.2s, background-color 0.2s;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background-color: #2C4230;
+            transform: translateY(-2px);
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+        }
+        .btn-whatsapp:hover {
+            background-color: #1DA851;
+        }
+
+        /* Featured Product: Banana */
+        .featured-banana {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .banana-visual {
+            background-color: var(--primary-yellow);
+            border-radius: 20px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .banana-visual img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .banana-info h2 {
+            font-size: 36px;
+            color: var(--leaf-green);
+            margin-bottom: 15px;
+        }
+
+        .tag {
+            background-color: var(--primary-yellow);
+            color: #4A3B00;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .nutrition-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .nutrition-card {
+            background: var(--white);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            border-bottom: 4px solid var(--primary-yellow);
+        }
+
+        .nutrition-card num {
+            display: block;
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--leaf-green);
+        }
+
+        .nutrition-card label {
+            font-size: 12px;
+            color: #777;
+        }
+
+        /* Order/Contact Section */
+        .contact-section {
+            background-color: var(--white);
+            padding: 60px 20px;
+        }
+
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-container h2 {
+            margin-bottom: 15px;
+            color: var(--leaf-green);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #DDD;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--leaf-green);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .featured-banana {
+                grid-template-columns: 1fr;
+            }
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .hero h1 {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Notice banner updated to reflect the 6 dozen free delivery minimum -->
+    <div class="delivery-banner">
+        🚀 <span>Free Home Delivery</span> across Pithapuram for all orders of 6 dozens or more!
+    </div>
+
+    <header>
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                🌱 Vigneshwara <span>Fruits</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#bananas">Our Bananas</a></li>
+                    <li><a href="#order">Order Now</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Freshness You Can Taste</h1>
+            <p>Welcome to Vigneshwara Fruits. We source the finest, naturally ripened, and hand-picked local fruits straight to your neighborhood, ensuring premium quality every day.</p>
+            <a href="#order" class="btn">Place an Order</a>
+        </div>
+    </section>
+
+    <section id="bananas" class="featured-banana">
+        <div class="banana-visual">
+            <img src="C:\Users\abhir\OneDrive\Desktop\south-indian-banana-2221344998-we31qbf2.jpg" alt="Vigneshwara Fruits Premium Bananas" />
+        </div>
+        <div class="banana-info">
+            <span class="tag">Our Specialty</span>
+            <h2>Premium Sweet Bananas</h2>
+            <p>Grown locally near Pithapuram with care and harvested at peak ripeness. Our bananas are naturally sweet, perfectly creamy, and packed with immediate energy. Excellent for snacks, smoothies, or your morning breakfast bowl.</p>
+            
+            <div class="nutrition-grid">
+                <div class="nutrition-card">
+                    <num>100%</num>
+                    <label>Naturally Ripened</label>
+                </div>
+                <!-- Updated info feature card -->
+                <div class="nutrition-card">
+                    <num>Free Delivery</num>
+                    <label>On Orders 6+ Dozens</label>
+                </div>
+                <div class="nutrition-card">
+                    <num>Rich</num>
+                    <label>In Fiber & Potassium</label>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="order" class="contact-section">
+        <div class="contact-container">
+            <h2>Order on WhatsApp</h2>
+            <p style="margin-bottom: 30px; color: #666;">Fill in your details below. Free home delivery will apply automatically if your order is 6 dozens or more!</p>
+            
+            <form id="orderForm">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" required placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="requirement">Requirement</label>
+                    <select id="requirement">
+                        <option value="Premium Bananas (Retail Dozens)">Premium Bananas (Retail Dozens)</option>
+                        <option value="Premium Bananas (Bulk/Wholesale)">Premium Bananas (Bulk/Wholesale)</option>
+                        <option value="Assorted Fruit Basket">Assorted Fruit Basket</option>
+                        <option value="Custom Order">Custom Order (Specify Below)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="quantity">Quantity (Number of Dozens)</label>
+                    <!-- Changed to type="number" to systematically calculate delivery eligibility -->
+                    <input type="number" id="quantity" min="1" required placeholder="e.g., 6">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Delivery Address / Special Notes</label>
+                    <textarea id="message" rows="3" required placeholder="Provide your exact delivery address..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-whatsapp" style="width: 100%;">Send Order via WhatsApp 💬</button>
+            </form>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <h2>Vigneshwara Fruits</h2>
+            <div class="store-details">
+                <p><strong>📞 Call / WhatsApp:</strong> +91 6281337570</p>
+                <p><strong>📍 Visit Us:</strong> Opposite Municipal Office, Pithapuram - 533450, Kakinada District, Andhra Pradesh</p>
+            </div>
+            <div class="copyright">
+                &copy; 2026 Vigneshwara Fruits. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('orderForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // 1. Get Form Data
+            const name = document.getElementById('name').value;
+            const requirement = document.getElementById('requirement').value;
+            const quantity = parseInt(document.getElementById('quantity').value, 10);
+            const message = document.getElementById('message').value;
+
+            // 2. Automated evaluation logic for free delivery criteria (>= 6 dozens)
+            let isDelivery = "NO (Store Pickup Required - Under 6 Dozens)";
+            if (quantity >= 6) {
+                isDelivery = "YES ✅ (Qualifies for Free Home Delivery!)";
+            }
+
+            // 3. Format the Message for WhatsApp
+            const textMessage = 
+                `*New Order Inquiry from Vigneshwara Fruits Website*%0A` +
+                `----------------------------------------%0A` +
+                `*Name:* ${name}%0A` +
+                `*Requirement:* ${requirement}%0A` +
+                `*Quantity:* ${quantity} Dozen(s)%0A` +
+                `*Free Home Delivery:* ${isDelivery}%0A` +
+                `*Address / Notes:* ${message}%0A` +
+                `----------------------------------------`;
+
+            // 4. Your WhatsApp Number
+            const phoneNumber = "916281337570";
+
+            // 5. Create the WhatsApp URL
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${textMessage}`;
+
+            // 6. Open WhatsApp in a new tab
+            window.open(whatsappUrl, '_blank');
+        });
+    </script>
+</body>
+</html>
